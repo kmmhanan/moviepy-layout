@@ -1,4 +1,4 @@
-# moviepy_layout
+# moviepy-layout
 
 Composable layout primitives for [MoviePy](https://zulko.github.io/moviepy/), inspired by **Flutter** and **CSS**.
 
@@ -27,7 +27,7 @@ pip install moviepy-layout
 
 ```python
 from moviepy.editor import ImageClip
-from moviepy_layout import Layout, Gradient
+from moviepy-layout import Layout, Gradient
 
 # Create a gradient background
 gradient = Gradient(
