@@ -208,4 +208,4 @@ Layout.hex_to_rgba("#ff0000ff")       # (255, 0, 0, 255)
 
 ## 📜 License
 
-MIT License © 2025 Kmm Hanan
+MIT License © 2025 [Kmm Hanan](https://kmmhanan.com)
