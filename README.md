@@ -99,17 +99,84 @@ Layout.box(
 #### `Layout.container(...)`
 A more advanced box with alignment, gradient, radius, and border options.
 
+```python
+Layout.container(
+    child=my_clip,
+    padding=20,  # or (top, right, bottom, left)
+    margin=10,
+    vertical_alignment="center",  # "top" | "center" | "bottom"
+    horizontal_alignment="center",  # "left" | "center" | "right"
+    gradient=my_gradient,  # optional Gradient instance
+    bg_color=(255, 255, 255, 255),
+    radius=10,  # rounded corners
+    border={"color": (0, 0, 0, 255), "width": 2},
+    size=(500, 500),
+    duration=5.0
+)
+```
+
 #### `Layout.flex(...)`
 Arrange multiple clips in a row or column.
+
+```python
+Layout.flex(
+    children=[clip1, clip2, clip3],
+    direction="row",  # "row" | "column"
+    vertical_alignment="center",  # for "column" direction
+    horizontal_alignment="center",  # for "row" direction
+    gap=20,  # space between children
+    width="fit",   # "full" | "fit"
+    height="fit",  # "full" | "fit"
+    screen_size=(1080, 1920),
+    duration=5.0
+)
+```
 
 #### `Layout.stack(...)`
 Overlay clips with z-order.
 
+```python
+Layout.stack(
+    children=[(background_clip, 0), (overlay_clip, 1), (text_clip, 2)],
+    size=(1080, 1920),
+    duration=5.0
+)
+```
+
 #### `Layout.text(...)`
 Create styled text clips with gradient, shadows, alignment, wrapping.
 
+```python
+Layout.text(
+    text="Hello World",
+    font_size=64,
+    font="Arial",
+    width=500,  # optional, for wrapping
+    gradient_hex="#ff0000ff,#0000ffff",  # optional gradient fill
+    font_color=(255, 255, 255, 255),
+    text_align="center",  # "left" | "center" | "right"
+    text_wrap=True,
+    shadow={
+        "color": (0, 0, 0, 128),
+        "offset": (4, 4),
+        "blur": 5
+    },
+    duration=5.0
+)
+```
+
 #### `Layout.effect(...)`
 Apply visual effects (`shadow`, `blur`, `inner_shadow`) to clips.
+
+# Shadow
+Layout.effect(my_clip, effect="shadow", effect_params={"color": (0, 0, 0, 128), "offset": (10, 10)})
+
+# Blur
+Layout.effect(my_clip, effect="blur", effect_params={"radius": 5})
+
+# Inner Shadow
+Layout.effect(my_clip, effect="inner_shadow", effect_params={"color": (0, 0, 0, 128), "offset": (5, 5), "blur": 10})
+
 
 ---
 
