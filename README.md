@@ -168,15 +168,23 @@ Layout.text(
 #### `Layout.effect(...)`
 Apply visual effects (`shadow`, `blur`, `inner_shadow`) to clips.
 
-# Shadow
+#### Shadow
+
+```python
 Layout.effect(my_clip, effect="shadow", effect_params={"color": (0, 0, 0, 128), "offset": (10, 10)})
+```
 
-# Blur
+#### Blur
+
+```python
 Layout.effect(my_clip, effect="blur", effect_params={"radius": 5})
+```
 
-# Inner Shadow
+#### Inner Shadow
+
+```python
 Layout.effect(my_clip, effect="inner_shadow", effect_params={"color": (0, 0, 0, 128), "offset": (5, 5), "blur": 10})
-
+```
 
 ---
 
