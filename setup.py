@@ -29,6 +29,8 @@ setup(
     ],
     keywords=[
         "moviepy",
+        "Layout",
+        "Editor",
         "video editing",
         "layout engine",
         "RGBA",
