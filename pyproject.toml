@@ -1,3 +1,55 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "moviepy-layout"
+version = "0.2.1"
+description = "Composable layout primitives for MoviePy: RGBA gradients, asset modes, and styled containers"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Kmm Hanan", email = "hanan@kmmhanan.com" }]
+keywords = [
+    "moviepy",
+    "Layout",
+    "Editor",
+    "video editing",
+    "layout engine",
+    "RGBA",
+    "gradient",
+    "asset mode",
+    "composable",
+    "python video",
+    "flutter-style",
+    "css-inspired",
+    "media automation",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+# Ranges, not exact pins: a library must not force users onto one numpy/Pillow/scipy build.
+# layout.py uses the moviepy 1.x API (moviepy.editor), so moviepy 2 is excluded.
+dependencies = [
+    "moviepy>=1.0.3,<2",
+    "numpy>=1.20",
+    "Pillow>=9.5",
+    "scipy>=1.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/kmmhanan/moviepy-layout"
+Documentation = "https://github.com/kmmhanan/moviepy-layout#readme"
+Source = "https://github.com/kmmhanan/moviepy-layout"
+Tracker = "https://github.com/kmmhanan/moviepy-layout/issues"
+
+[tool.setuptools]
+packages = ["moviepy_layout"]
