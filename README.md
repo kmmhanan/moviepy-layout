@@ -27,7 +27,7 @@ pip install moviepy-layout
 
 ```python
 from moviepy.editor import ImageClip
-from moviepy-layout import Layout, Gradient
+from moviepy_layout import Layout, Gradient
 
 # Create a gradient background
 gradient = Gradient(
@@ -59,6 +59,7 @@ Gradient(
 ```
 
 Supported directions:
+
 - `top_to_bottom`
 - `bottom_to_top`
 - `left_to_right`
@@ -73,6 +74,7 @@ Supported directions:
 ### 🎬 Layout Utilities
 
 #### `Layout.asset(...)`
+
 Resize a clip with a given mode.
 
 - `cover`: fills container, crops excess
@@ -81,6 +83,7 @@ Resize a clip with a given mode.
 - `fill`: stretches to fill container
 
 #### `Layout.box(...)`
+
 Create a box with optional child.
 
 ```python
@@ -97,6 +100,7 @@ Layout.box(
 ```
 
 #### `Layout.container(...)`
+
 A more advanced box with alignment, gradient, radius, and border options.
 
 ```python
@@ -116,6 +120,7 @@ Layout.container(
 ```
 
 #### `Layout.flex(...)`
+
 Arrange multiple clips in a row or column.
 
 ```python
@@ -133,6 +138,7 @@ Layout.flex(
 ```
 
 #### `Layout.stack(...)`
+
 Overlay clips with z-order.
 
 ```python
@@ -144,6 +150,7 @@ Layout.stack(
 ```
 
 #### `Layout.text(...)`
+
 Create styled text clips with gradient, shadows, alignment, wrapping.
 
 ```python
@@ -166,6 +173,7 @@ Layout.text(
 ```
 
 #### `Layout.effect(...)`
+
 Apply visual effects (`shadow`, `blur`, `inner_shadow`) to clips.
 
 - Shadow
