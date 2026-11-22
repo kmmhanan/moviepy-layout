@@ -200,7 +200,7 @@ Layout.effect(my_clip, effect="inner_shadow", effect_params={"color": (0, 0, 0, 
 
 ```python
 Layout.rgba_to_hex((255, 0, 0, 255))  # "#ff0000ff"
-Layout.hex_to_rgba("#ff0000ff")       # (255, 0, 0, 255)
+Layout.hex_to_rgba("#ff0000ff")     # (255, 0, 0, 255)
 ```
 
 ---
