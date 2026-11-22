@@ -4,31 +4,25 @@ on:
   push:
     tags:
       - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Build and check the package without uploading"
+        type: boolean
+        default: true
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  build-and-publish:
-    name: Build and Publish
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python 3.12.3
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12.3"
-
-      - name: Upgrade pip and install build tools
-        run: |
-          pip install --upgrade pip
-          pip install setuptools wheel twine
-
-      - name: Build package
-        run: python setup.py sdist bdist_wheel
-
-      - name: Publish to PyPI
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-        run: twine upload dist/*
+  publish:
+    permissions:
+      contents: read
+    uses: KMM-ZONE/open-flows/.github/workflows/publish-python.yml@v1
+    with:
+      python_version: "3.12"
+      run_tests: false
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets:
+      PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
